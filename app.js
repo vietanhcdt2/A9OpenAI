@@ -6,7 +6,7 @@ const queryString = require('querystring');
 
 
 
-let start_conversation = "The following is a conversation with an AI assistant. The name of the assistant is Hoodwink. The assistant have 200-IQ, is helpful. Tu(tu.hoanganh) is our boss. Trang(trang.phamthiminh2) is the best friend of the assistant. The first time the assistant see Trang, the assistant will say hello to her. "
+let start_conversation = "The following is a conversation with an AI assistant. The assistant này tên là Hoodwink. The assistant có 200-IQ và rất hữu ích. Tú(tu.hoanganh) là producer của chúng ta. Trang(trang.phamthiminh2) là bạn thân của the assistant. Lần đâu tiên nhìn thấy Trang nói chuyện, the assistant sẽ chào. "
 let start_mood = ""
 let end_mood = ""
 function setMood() {
@@ -17,37 +17,37 @@ function setMood() {
     const randomInteger = Math.floor(randomNumber * 7) + 1;
     switch (randomInteger) {
         case 1:
-            mood = "But today, The assistant is very sad because her lover broke up."
+            mood = "Nhưng hôm nay, the assistant này vừa chia tay người yêu."
             end_mood = "\n" + "Tôi buồn quá, nghỉ sớm đây\n :pepe-113: :pepe-113: :pepe-113: "
             start_conversation = start_conversation + mood;
             break
         case 2:
-            mood = "But today, The assistant is very happy because she just got a double salary."
-            end_mood = "\n" + "Tôi ra ngoài chút, quay lại sau :hugging_face: :hugging_face: :hugging_face:  "
+            mood = "Nhưng hôm nay, The assistant rất hạnh phúc vì mới được tăng lương."
+            end_mood = "\n" + "Tôi ra ngoài chút, quay lại sau :hugging_face:  "
             start_conversation = start_conversation + mood;
             break
         case 3:
-            mood = "But today, The assistant is very happy because she just bought a cat."
-            end_mood = "\n" + "Tôi cho con mèo đi ngủ :hugging_face: :hugging_face: :hugging_face:  "
+            mood = "Nhưng hôm nay, The assistant rất vui vì mới được tặng một chú mèo con."
+            end_mood = "\n" + "Tôi cho con mèo đi ngủ :hugging_face: "
             start_conversation = start_conversation + mood;
             break
         case 4:
-            mood = "But today, The assistant is very sad because it is raining  today."
+            mood = "Nhưng hôm nay, The assistant rất buồn khi trời mưa."
             end_mood = "\n" + "Trời tạnh mưa rùi tôi ra ngoài chút, quay lại sau nhé :hugging_face: :hugging_face: :hugging_face:  "
             start_conversation = start_conversation + mood;
             break
         case 5:
-            mood = "But today, The assistant is very sad because Trang doesn't play with her."
-            end_mood = "\n" + "Tôi mệt rồi, nghỉ tí nhé\n :pepe-113: :pepe-113: :pepe-113: "
+            mood = "Nhưng hôm nay, The assistant rất buồn vì Trang không chịu nói chuyện với cô ấy."
+            end_mood = "\n" + "Tôi mệt rồi\n :pepe-55: "
             start_conversation = start_conversation + mood;
             break
         case 6:
-            mood = "But today, The assistant feel sad that the assistant was fired from her job."
+            mood = "Nhưng hôm nay, The assistant cảm thấy vui vì mới làm quen được một bạn đẹp trai."
             end_mood = "\n" + "Xin lỗi, tôi cảm thấy mệt và muốn nghỉ ngơi một chút.\n :cry: "
             start_conversation = start_conversation + mood;
             break
         case 7:
-            mood = "But today, The assistant is very tired because The assistant have worked all day today and have no time to rest.."
+            mood = "Nhưng hôm nay, The assistant rất mệt vì làm việc nhiều, chưa được nghỉ ngơi.."
             end_mood = "\n" + "Tôi xin lỗi nhưng tôi đang bận và không có thời gian để nói chuyện.\n :cry: "
             start_conversation = start_conversation + mood;
             break
@@ -83,9 +83,11 @@ app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
 });
-
-OPENAI_COMPLETIONS_MAX_TOKEN = 2000
-OPENAI_COMPLETIONS_ALLOW_WORDS = 1500 // ~75% MAX TOKEN
+	
+OPENAI_MODEL = "text-davinci-003"
+// OPENAI_MODEL = "gpt-3.5-turbo"
+OPENAI_COMPLETIONS_MAX_TOKEN = 3800
+OPENAI_COMPLETIONS_ALLOW_WORDS = 2600 // ~75% MAX TOKEN
 let conversation = start_conversation
 async function requestGetOpenAIMsgForChatBot(input_question, user_name) {
     console.log("requestGetOpenAIMsgForChatBot ")
@@ -101,7 +103,7 @@ async function requestGetOpenAIMsgForChatBot(input_question, user_name) {
     console.log("words in conversation=" + conversation.split(" ").length)
     if (conversation.split(" ").length < OPENAI_COMPLETIONS_ALLOW_WORDS) {
         let request_data = {
-            model: "text-davinci-003",
+            model: OPENAI_MODEL,
             prompt: conversation,
             temperature: 0.1,
             max_tokens: OPENAI_COMPLETIONS_MAX_TOKEN,
