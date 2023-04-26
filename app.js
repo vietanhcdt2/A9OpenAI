@@ -86,8 +86,8 @@ app.use(function (req, res, next) {
 	
 OPENAI_MODEL = "text-davinci-003"
 // OPENAI_MODEL = "gpt-3.5-turbo"
-OPENAI_COMPLETIONS_MAX_TOKEN = 3800
-OPENAI_COMPLETIONS_ALLOW_WORDS = 2600 // ~75% MAX TOKEN
+OPENAI_COMPLETIONS_MAX_TOKEN = 2000
+OPENAI_COMPLETIONS_ALLOW_WORDS = 1600 // ~75% MAX TOKEN
 let conversation = start_conversation
 async function requestGetOpenAIMsgForChatBot(input_question, user_name) {
     console.log("requestGetOpenAIMsgForChatBot ")
