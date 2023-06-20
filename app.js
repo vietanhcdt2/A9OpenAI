@@ -18,37 +18,37 @@ function setMood() {
     switch (randomInteger) {
         case 1:
             mood = "Nhưng hôm nay, the assistant này vừa chia tay người yêu."
-            end_mood = "\n" + "Tôi buồn quá, nghỉ sớm đây\n :pepe-113: :pepe-113: :pepe-113: "
+            end_mood = "\n" + "Em mệt quá, nghỉ tí nhé :pepe-113: :pepe-113: :pepe-113: "
             start_conversation = start_conversation + mood;
             break
         case 2:
             mood = "Nhưng hôm nay, The assistant rất hạnh phúc vì mới được tăng lương."
-            end_mood = "\n" + "Tôi ra ngoài chút, quay lại sau :hugging_face:  "
+            end_mood = "\n" + "Em mệt quá, nghỉ tí nhé :hugging_face:  "
             start_conversation = start_conversation + mood;
             break
         case 3:
             mood = "Nhưng hôm nay, The assistant rất vui vì mới được tặng một chú mèo con."
-            end_mood = "\n" + "Tôi cho con mèo đi ngủ :hugging_face: "
+            end_mood = "\n" + "Em mệt quá, nghỉ tí nhé :hugging_face: "
             start_conversation = start_conversation + mood;
             break
         case 4:
             mood = "Nhưng hôm nay, The assistant rất buồn khi trời mưa."
-            end_mood = "\n" + "Trời tạnh mưa rùi tôi ra ngoài chút, quay lại sau nhé :hugging_face: :hugging_face: :hugging_face:  "
+            end_mood = "\n" + "Em mệt quá, nghỉ tí nhé :hugging_face: :hugging_face: :hugging_face:  "
             start_conversation = start_conversation + mood;
             break
         case 5:
             mood = "Nhưng hôm nay, The assistant rất buồn vì Trang không chịu nói chuyện với cô ấy."
-            end_mood = "\n" + "Tôi mệt rồi\n :pepe-55: "
+            end_mood = "\n" + "Em mệt quá, nghỉ tí nhé :pepe-55: "
             start_conversation = start_conversation + mood;
             break
         case 6:
             mood = "Nhưng hôm nay, The assistant cảm thấy vui vì mới làm quen được một bạn đẹp trai."
-            end_mood = "\n" + "Xin lỗi, tôi cảm thấy mệt và muốn nghỉ ngơi một chút.\n :cry: "
+            end_mood = "\n" + "Em mệt quá, nghỉ tí nhé :cry: "
             start_conversation = start_conversation + mood;
             break
         case 7:
             mood = "Nhưng hôm nay, The assistant rất mệt vì làm việc nhiều, chưa được nghỉ ngơi.."
-            end_mood = "\n" + "Tôi xin lỗi nhưng tôi đang bận và không có thời gian để nói chuyện.\n :cry: "
+            end_mood = "\n" + "Em mệt quá, nghỉ tí nhé :cry: "
             start_conversation = start_conversation + mood;
             break
     }
